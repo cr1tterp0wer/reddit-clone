@@ -4,12 +4,15 @@
 <form  action="<%= posts_url%>" method="post">
   <input name="_method" value="POST" type="hidden">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-  <br>
+  <br><br>
   <label for="Title">Title</label>
   <input type="text" name="post[title]" value="">
   <br>
   <label for="URL">URL</label>
-  <textarea name="post[url]"value="">
+  <input type="text" name="post[url]"value="">
+  <br><br>
+  <label for="Content">Content</label>
+  <textarea id="Content" name="post[content]">
   </textarea>
 
   <br>
