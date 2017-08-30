@@ -1,0 +1,12 @@
+<div id="all-subs">
+  <h1>All The Subs!</h1>
+  
+  <ul>
+  <% @subs.each do |sub| %>
+   <li><%= link_to sub.title, sub_url(sub) %></li>
+  <% end %>
+  </ul>
+</div>
+<% if is_logged? %>
+  <%= link_to 'New Sub', new_sub_url %>
+<% end %>

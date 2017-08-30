@@ -1,0 +1,29 @@
+<h1>New Post!</h1>
+
+<%= render 'shared/errors' %>
+<form  action="<%= posts_url%>" method="post">
+  <input name="_method" value="POST" type="hidden">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <br>
+  <label for="Title">Title</label>
+  <input type="text" name="post[title]" value="">
+  <br>
+  <label for="URL">URL</label>
+  <textarea name="post[url]"value="">
+  </textarea>
+
+  <br>
+
+  <label>
+    <% @subs.each do |sub|%>
+      <input type="checkbox" name="sub[id][]" value="<%=sub.id %>">
+      <%= sub.title %><br>
+    <% end %>
+  </label>
+
+  <input type="submit" value="Submit!">
+
+</form>
+
+
+

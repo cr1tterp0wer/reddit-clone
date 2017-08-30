@@ -1,0 +1,13 @@
+<div id="post-show">
+  <h1><%= @post.title %></h1>
+  <h3>url</h3>
+  <h3><%= @post.url %></h3>
+  <h3>content</h3>
+  <p><%= @post.content %></p>
+
+
+  <% if is_logged? %> 
+  <%= link_to 'Make New Post', new_post_url() %>
+  <% end %>
+
+</div>
